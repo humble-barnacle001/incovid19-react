@@ -1,7 +1,7 @@
 import {scaleOrdinal} from 'd3-scale';
 export const API_DOMAIN = 'https://data.incovid19.org';
 
-export const DATA_API_ROOT = `${API_DOMAIN}/v4/min`;
+export const DATA_API_ROOT = `${process.env.REACT_APP_DATA_API_ROOT}/v4/min`;
 export const API_REFRESH_INTERVAL = 100000; // seconds
 
 export const LOCALE_SHORTHANDS = {
@@ -64,6 +64,14 @@ export const STATISTIC_CONFIGS = {
   },
   vaccinated2: {
     displayName: 'fully vaccinated',
+    color: '#fb5581',
+    format: 'short',
+    showDelta: true,
+    hideZero: true,
+    category: 'vaccinated',
+  },
+  vaccinated3: {
+    displayName: 'precaution dose',
     color: '#fb5581',
     format: 'short',
     showDelta: true,
